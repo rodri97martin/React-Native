@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
 	}, 
 	questionText: {
 		fontSize: 30,
-		textAlign: 'center'
+		textAlign: 'center',
+		height: 120
 	}, 
 	questionNumber: {
 		fontSize: 20,

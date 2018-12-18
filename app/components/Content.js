@@ -9,7 +9,6 @@ import { View, Image, Text, StyleSheet } from 'react-native';
 export default class Content extends React.Component {
 	render() {
 		return (
-
 			<View>
 				<Image style={styles.img} source={{ uri: this.props.question.attachment.url}}/>
 				<Timer timer={this.props.timer} submitTime={this.props.submitTime}/>
@@ -28,6 +27,7 @@ const styles = StyleSheet.create({
 		alignSelf: 'center',
 		borderColor: 'black',
 		borderWidth: 3,
-		marginTop: 10
+		marginTop: 10, 
+		resizeMode: 'stretch'
 	}
 })

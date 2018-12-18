@@ -27,7 +27,7 @@ export default class Game extends React.Component {
         	);
 		} else {
 			return (
-				<View id="gameDiv">
+				<View>
 					<Content question={this.props.question} 
 						onQuestionAnswer={this.props.onQuestionAnswer} 
 						timer={this.props.timer}

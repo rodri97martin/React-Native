@@ -6,8 +6,7 @@ export default class Pistas extends React.Component {
 		return (
 			<View style={styles.tips}>
 				<Text style={styles.pistas}>Pistas</Text>
-				<FlatList data={this.props.tips} renderItem={(tip)=><Text>tip</Text>}>
-				</FlatList>
+				<FlatList data={this.props.tips} renderItem={({item, index})=>(<Text style={styles.tip}>-{item}</Text>)}/>
 			</View>
 		);
 	}
@@ -20,6 +19,11 @@ const styles = StyleSheet.create({
 		textDecorationLine: 'underline'
 	},
 	tips: {
-		height: 120
+		height: 140
+	},
+	tip: {
+		marginTop:15,
+		fontSize: 14,
+		paddingLeft: 10
 	}
 })

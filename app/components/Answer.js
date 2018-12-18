@@ -12,7 +12,7 @@ export default class Answer extends React.Component {
 	}
 	render() {
 		return (
-			<TextInput style={styles.input} placeholder="Type your answer here" type="text" value={this.props.userAnswer || ""} onChangeText={this.change} />
+			<TextInput style={styles.input} placeholder="Type your answer here" placeholderTextColor='midnightblue' type="text" value={this.props.userAnswer || ""} onChangeText={this.change} />
 		);
 	}
 }
