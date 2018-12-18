@@ -4,7 +4,7 @@ import { createStore } from 'redux';
 import { questions } from '../assets/mock-data';
 
 import React from 'react';
-import GameScreen from '../components/GameScreen';
+import AppNavigator from '../components/AppNavigator';
 
 export default class ReduxProvider extends React.Component {
 	constructor(props) {
@@ -27,7 +27,7 @@ export default class ReduxProvider extends React.Component {
 		
 		return (
 			<Provider store = { this.store } >
-				<GameScreen/>
+				<AppNavigator/>
 			</Provider>
 
 		);
