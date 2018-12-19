@@ -1,6 +1,7 @@
 import React from 'react';
 import Content from './Content';
 import Actionbar from './Actionbar';
+import ActionbarX from './ActionbarX';
 import GameOver from './GameOver';
 import { View } from 'react-native';
 
@@ -34,7 +35,8 @@ export default class Game extends React.Component {
 						submitTime={this.props.submitTime}
 						currentQuestion={this.props.currentQuestion}
 					/>
-					<Actionbar onClick={this.onClick} currentQuestion={this.props.currentQuestion} isFinished={this.props.isFinished}/> 
+					<Actionbar onClick={this.onClick} currentQuestion={this.props.currentQuestion} isFinished={this.props.isFinished}/>
+					<ActionbarX navigate={this.props.navigate}/> 
 				</View>
 			);
 		}

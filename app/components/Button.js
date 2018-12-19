@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
 	boton: {
 		backgroundColor: 'blue',
 		width: '25%',
-		borderColor: 'silver',
-		borderWidth: 2,
+		borderColor: 'black',
+		borderWidth: 1,
 		borderRadius:7
 	},
 	text: {

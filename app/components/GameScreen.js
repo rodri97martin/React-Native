@@ -48,12 +48,13 @@ class GameScreen extends Component {
 
   componentDidMount() {
     this.download();
+    clearInterval(timer);
     this.startTimer();
   }
 
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'silver'}}>
+      <View style={{ flex: 1, backgroundColor: 'white'}}>
         <TitleBar/>
         <Game question={this.props.questions[this.props.currentQuestion]} 
           onQuestionAnswer={(answer)=>{ this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
@@ -63,6 +64,7 @@ class GameScreen extends Component {
           score={this.props.score}
           timer={this.props.timer}
           submitTime={this.submitTime}
+          navigate={this.props.navigation.navigate}
         />
       </View>
     );
