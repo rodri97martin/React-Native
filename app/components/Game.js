@@ -36,7 +36,7 @@ export default class Game extends React.Component {
 						currentQuestion={this.props.currentQuestion}
 					/>
 					<Actionbar onClick={this.onClick} currentQuestion={this.props.currentQuestion} isFinished={this.props.isFinished}/>
-					<ActionbarX navigate={this.props.navigate}/> 
+					<ActionbarX onClick={this.onClick} navigate={this.props.navigate}/> 
 				</View>
 			);
 		}

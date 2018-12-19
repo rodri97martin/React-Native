@@ -10,7 +10,7 @@ export default class ActionbarX extends React.Component {
 	}
 
 	onClick(name){
-		this.props.onClick(name)
+		this.props.onClick(name);
 	}
 
 	render() {

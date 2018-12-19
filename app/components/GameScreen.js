@@ -10,7 +10,7 @@ import { startTimer } from '../redux/actions';
 import { stopTimer } from '../redux/actions';
 import { changeTime } from '../redux/actions';
 
-import { View } from 'react-native';
+import { AsyncStorage, View } from 'react-native';
 
 
 var timer = null;
@@ -75,18 +75,75 @@ class GameScreen extends Component {
   }
 
   onClick(name) {
-    if (name === "Submit") {
-      this.props.dispatch(submit(this.props.questions));
-      this.stopTimer();
-    } else if (name === "Play Again"){
-      this.download();
-      this.stopTimer();
-      this.startTimer();
-    } else {
-      this.props.dispatch(changeQuestion(name));
+    switch(name) {
+      case "Submit":
+        this.props.dispatch(submit(this.props.questions));
+        this.stopTimer();
+        break;
+      case "Play Again":
+        this.download();
+        this.stopTimer();
+        this.startTimer();
+        break;
+      case "Save":
+        this._saveData();
+        break;
+      case "Load":
+        this._loadData();
+        break;
+      case "Remove":
+        this._removeData();
+        break;
+      default: 
+        this.props.dispatch(changeQuestion(name));
+    }
+  }
+
+ 
+
+  async _saveData(){
+
+    var questions = JSON.stringify(this.props.questions);
+    try {
+      await AsyncStorage.removeItem('@P7_2018_IWEB:quiz');
+      await AsyncStorage.setItem('@P7_2018_IWEB:quiz', questions); 
+      alert("Preguntas guardadas correctamente.");
+    } catch (error) { 
+      alert("No se ha podido guardar las preguntas.") 
+    }
+    
+  }
+
+  async _loadData(){
+
+    try {
+      var value = await AsyncStorage.getItem('@P7_2018_IWEB:quiz'); 
+      if (value != null) {
+        this.props.dispatch(initQuestions(JSON.parse(value)));
+        alert("Preguntas cargadas correctamente.");
+        this.stopTimer();
+        this.startTimer();
+      } else {
+        alert("No hay preguntas guardadas.");
+      }
+    } catch (error) { 
+      alert("No se ha podido cargar las preguntas.");
+    }
+    
+  }
+
+  async _removeData() {
+    try {
+      await AsyncStorage.removeItem('@P7_2018_IWEB:quiz');
+      alert("Preguntas borradas correctamente.");
+    } catch (error) { 
+      alert("No se ha podido borrar las preguntas.");
     }
   }
 }
+
+
+
 
 function mapStateToProps(state) {
   return {
