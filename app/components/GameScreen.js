@@ -108,6 +108,7 @@ class GameScreen extends Component {
       await AsyncStorage.removeItem('@P7_2018_IWEB:quiz');
       await AsyncStorage.setItem('@P7_2018_IWEB:quiz', questions); 
       alert("Preguntas guardadas correctamente.");
+
     } catch (error) { 
       alert("No se ha podido guardar las preguntas.") 
     }
