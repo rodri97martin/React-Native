@@ -5,6 +5,7 @@ export default class Question extends React.Component {
 	render() {
 		return (
 			<View style={styles.question}>
+
 				<Text style={styles.questionNumber}>Question {this.props.currentQuestion + 1}/10 </Text>
 				<Text style={styles.questionText}>{this.props.question.question} </Text>
 			</View>
@@ -14,11 +15,11 @@ export default class Question extends React.Component {
 
 const styles = StyleSheet.create({
 	question: {
-		marginTop: 10,
+		marginTop: 4,
 		marginBottom: 10
 	}, 
 	questionText: {
-		fontSize: 30,
+		fontSize: 24,
 		textAlign: 'center',
 		height: 120
 	}, 

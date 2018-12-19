@@ -55,17 +55,21 @@ class GameScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: 'white'}}>
-        <TitleBar/>
-        <Game question={this.props.questions[this.props.currentQuestion]} 
-          onQuestionAnswer={(answer)=>{ this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
-          onClick={this.onClick}
-          currentQuestion={this.props.currentQuestion}
-          isFinished={this.props.finished}
-          score={this.props.score}
-          timer={this.props.timer}
-          submitTime={this.submitTime}
-          navigate={this.props.navigation.navigate}
-        />
+        <View style={{ flex: 1}}>
+          <TitleBar/>
+        </View>
+        <View style={{ flex: 7}}>
+          <Game question={this.props.questions[this.props.currentQuestion]} 
+            onQuestionAnswer={(answer)=>{ this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))}}
+            onClick={this.onClick}
+            currentQuestion={this.props.currentQuestion}
+            isFinished={this.props.finished}
+            score={this.props.score}
+            timer={this.props.timer}
+            submitTime={this.submitTime}
+            navigate={this.props.navigation.navigate}
+          />
+        </View>
       </View>
     );
   }
@@ -110,7 +114,7 @@ class GameScreen extends Component {
       alert("Preguntas guardadas correctamente.");
 
     } catch (error) { 
-      alert("No se ha podido guardar las preguntas.") 
+      alert("No se ha podido guardar las preguntas.");
     }
     
   }

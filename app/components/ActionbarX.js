@@ -29,7 +29,6 @@ export default class ActionbarX extends React.Component {
 const styles = StyleSheet.create({
 	actionBar: {
 		flexDirection: 'row',
-		flexWrap: 'wrap',
-		marginTop: 20
+		flexWrap: 'wrap'
 	}
 })
