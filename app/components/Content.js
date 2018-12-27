@@ -13,7 +13,7 @@ export default class Content extends React.Component {
 				<View style={{ flex: 46}}>
 					<Image style={styles.img} source={{ uri: this.props.question.attachment.url}}/>
 				</View>
-				<View style={{ flex: 5}}>
+				<View style={{ flex: 6}}>
 					<Timer timer={this.props.timer} submitTime={this.props.submitTime}/>
 				</View>
 				<View style={{ flex: 22}}>

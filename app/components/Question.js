@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 export default class Question extends React.Component {
 	render() {
@@ -7,7 +7,10 @@ export default class Question extends React.Component {
 			<View style={styles.question}>
 
 				<Text style={styles.questionNumber}>Question {this.props.currentQuestion + 1}/10 </Text>
-				<Text style={styles.questionText}>{this.props.question.question} </Text>
+				<ScrollView>
+					<Text style={styles.questionText}>{this.props.question.question} </Text>
+				</ScrollView>
+				
 			</View>
 		);
 	}
@@ -15,14 +18,12 @@ export default class Question extends React.Component {
 
 const styles = StyleSheet.create({
 	question: {
-		marginTop: 4,
-		marginBottom: 10
+		flex: 1
 	}, 
 	questionText: {
 		fontSize: 24,
-		textAlign: 'center',
-		height: 120
-	}, 
+		textAlign: 'center'
+	},
 	questionNumber: {
 		fontSize: 20,
 		textAlign: 'center', 
