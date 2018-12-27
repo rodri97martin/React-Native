@@ -55,7 +55,7 @@ class GameScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: 'white'}}>
-        <View style={{ flex: 1}}>
+        <View style={{ flex: 1, justifyContent: 'flex-end'}}>
           <TitleBar/>
         </View>
         <View style={{ flex: 7}}>

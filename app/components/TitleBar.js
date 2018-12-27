@@ -12,8 +12,6 @@ export default class TitleBar extends React.Component {
 const styles = StyleSheet.create ({
 	title: {
 		fontSize: 50,
-		paddingTop: 35,
-		height: 100,
 		textAlign: 'center'
 	}
 
