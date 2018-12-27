@@ -1,4 +1,5 @@
 import React from 'react';
+import Pista from './Pista';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 
 export default class Pistas extends React.Component {
@@ -6,7 +7,7 @@ export default class Pistas extends React.Component {
 		return (
 			<View style={styles.tips}>
 				<Text style={styles.pistas}>Pistas</Text>
-				<FlatList data={this.props.tips} renderItem={({item, index})=>(<Text style={styles.tip}>-{item}</Text>)}/>
+				<FlatList data={this.props.tips} renderItem={({item, index})=>(<Pista item={item}/>)} keyExtractor={(item, index) => index.toString()}/>
 			</View>
 		);
 	}
@@ -17,9 +18,6 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		fontSize: 20, 
 		textDecorationLine: 'underline'
-	},
-	tips: {
-		height: 140
 	},
 	tip: {
 		marginTop:15,
